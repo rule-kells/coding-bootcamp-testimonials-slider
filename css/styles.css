@@ -1,0 +1,291 @@
+:root {
+  /* ### Colors ###  */
+
+  /* ## Primary ## */
+
+  --dark-blue: hsl(240, 38%, 20%);
+  --grayish-blue: hsl(240, 18%, 77%);
+  --white: hsl(0, 0%, 100%);
+
+  /* ### Typography ### */
+  --ff-primary: 'Inter', sans-serif;
+  /* ## Body Copy ## */
+  --ff-body-desktop: 2rem;
+  --ff-body-mobile: 1.125rem;
+
+  --spacer: 1.1875em;
+}
+
+/* general structure and style  */
+
+html {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+
+  font-family: var(--ff-primary);
+  font-size: var(--ff-body-mobile);
+  font-weight: 300;
+  line-height: 1.6em;
+  text-align: center;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  inset: 0;
+  position: absolute;
+  background-image: url('../images/pattern-curve.svg');
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
+
+img {
+  max-width: 100%;
+  display: block; /* this is something you'll use often but more optional*/
+}
+
+button {
+  all: unset;
+}
+
+.container {
+  max-width: 69.375rem;
+  position: relative;
+  min-height: 100vh;
+  transition: transform 0.35s ease-out;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.flow-content > * + * {
+  margin-top: var(--flow-space, spacer);
+}
+
+/* hides h2 tag for Controls for accessiblity reasons; this is necessary for section elements when 
+we don't want a header to actually show */
+
+.hidden {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+/* background  pattern */
+
+.bg {
+  max-width: 90rem;
+  position: relative;
+  margin: 0 auto;
+}
+
+.bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/pattern-bg.svg');
+  background-size: 90vw auto;
+  background-position: center top 3%;
+  background-repeat: no-repeat;
+
+  z-index: -1;
+}
+
+/* testimonial slides  */
+
+.testimonial-slides {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+}
+
+/* hero images for testimonial slides */
+
+.hero-img {
+  /* width: 60%; */
+  position: relative;
+  margin: 0 auto;
+  padding: 3.375rem 3.8125rem 3.5625rem;
+}
+
+.hero-img > img {
+  box-shadow: 0 40px 50px -30px hsla(240, 52%, 29%, 0.5);
+  border-radius: 5px;
+}
+
+.hero-img > img {
+  width: 100%;
+}
+
+/* slide controls  */
+
+.slider-controls {
+  width: 80px;
+  height: 40px;
+  background-color: var(--white);
+  position: absolute;
+  transform: translate(-50px, -25px);
+  padding: 0.875rem 0.875rem;
+  border: none;
+  border-radius: 28px;
+
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 15px 20px -10px hsla(240, 52%, 29%, 0.1);
+}
+
+.slider-btn.nonselected {
+  opacity: 30%;
+}
+
+/* testimonial content  */
+
+.testimonial__content {
+  padding: 0 2rem 4.6875rem;
+}
+
+.testimonial__content blockquote {
+  position: relative;
+  padding: 1.5625em 0 0;
+}
+
+.testimonial__content blockquote::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/pattern-quotes.svg');
+  background-position: center top 5px;
+  background-size: 3.75rem;
+  background-repeat: no-repeat;
+}
+
+.testimonial__content .name {
+  color: var(--dark-blue);
+  margin-top: var(--spacer);
+  font-size: 0.9375rem;
+  line-height: 1.1;
+}
+
+.testimonial__content .title {
+  color: var(--grayish-blue);
+  font-weight: 500;
+  font-size: 0.9375rem;
+}
+
+/* footer  */
+.attribution {
+  position: absolute;
+  font-size: 11px;
+  text-align: center;
+  inset: 0;
+  top: auto;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 48em) {
+  /* general style and structure for desktop  */
+
+  body {
+    text-align: left;
+    font-size: var(--ff-body-desktop);
+  }
+
+  .flow-content > * + * {
+    margin-top: 1rem;
+  }
+
+  /* testimonial slides   */
+
+  .bg {
+    padding: 0 2rem;
+  }
+
+  .bg::before {
+    background-size: 697px 657px;
+    background-position: 88% 48%;
+  }
+
+  .testimonial-slides {
+    display: grid;
+    grid-template-columns: minmax(min-content, 39.6875rem) 3em minmax(
+        min-content,
+        33.75rem
+      );
+    align-items: center;
+  }
+
+  .testimonial__content,
+  .hero-img {
+    padding: 0;
+  }
+
+  .hero-img {
+    grid-column: 2 / span 2;
+    grid-row: 1;
+  }
+
+  .slider-controls {
+    width: 7rem;
+    height: 3.5rem;
+    background-color: var(--white);
+    padding: 1.25rem 1.5rem;
+    border: none;
+    border-radius: 28px;
+    transform: translate(60px, -30px);
+  }
+
+  .testimonial__content {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+
+  .testimonial__content blockquote::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/pattern-quotes.svg');
+    background-position: top left 15%;
+    background-size: 7.5rem;
+    background-repeat: no-repeat;
+  }
+
+  .testimonial__content .name,
+  .testimonial__content .title {
+    display: inline-block;
+  }
+
+  .testimonial__content .name {
+    margin-top: 0;
+    margin-right: calc(var(--spacer) - 0.8em);
+    font-size: 1.25rem;
+    line-height: 1.1;
+  }
+
+  .testimonial__content .title {
+    margin-top: 0;
+    font-size: 1.25rem;
+  }
+}
+
+.inactive {
+  display: none;
+}

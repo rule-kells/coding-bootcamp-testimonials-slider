@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+
+</head>
+
+<body>
+  <main class="bg">
+    <div class="container">
+      <div class="testimonial-slides active">
+        <div class="hero-img">
+          <img src="./images/image-tanya.jpg" alt="a woman holding her hand up to her ear">
+          <section class="slider-controls " aria-label="slider-controls">
+            <h2 class="hidden">slider Controls</h2>
+            <button class="slider-btn slider-btn--preview nonselected"><img src="./images/icon-prev.svg"
+                alt="previous arrow"></button>
+            <button class="slider-btn slider-btn--next "><img src="./images/icon-next.svg" alt="next arrow"></button>
+          </section>
+        </div>
+        <section class="testimonial__content flow-content">
+          <blockquote>
+            <p class="body">
+              “ I’ve been interested in coding for a while but never taken the jump, until now.
+              I couldn’t recommend this course enough. I’m now in the job of my dreams and so
+              excited about the future. ”
+            </p>
+          </blockquote>
+          <h2 class="name">Tanya Sinclair</h2>
+          <p class="title">UX Engineer</p>
+        </section>
+      </div>
+      <div class="testimonial-slides inactive">
+        <div class="hero-img">
+          <img src="./images/image-john.jpg" alt="a man smiling with his arms crossed">
+          <section class="slider-controls" aria-label="slider-controls">
+            <h2 class="hidden">Controls</h2>
+            <button class="slider-btn slider-btn--preview"><img src="./images/icon-prev.svg"
+                alt="preview arrow"></button>
+            <button class="slider-btn slider-btn--next nonselected"><img src="./images/icon-next.svg"
+                alt="next arrow"></button>
+          </section>
+        </div>
+        <section class="testimonial__content flow-content">
+          <blockquote>
+            <p class="body">
+              “ If you want to lay the best foundation possible I’d recommend taking this course.
+              The depth the instructors go into is incredible. I now feel so confident about
+              starting up as a professional developer. ”
+            </p>
+          </blockquote>
+          <h2 class="name">John Tarkpor</h2>
+          <p class="title">Junior Front-end Developer</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Kellen Ruyle</a>.
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
